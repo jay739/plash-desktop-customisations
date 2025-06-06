@@ -1,0 +1,58 @@
+header,
+center,
+#countdown {
+display: none !important;
+}
+
+body {
+width: 80vw !important;
+height: 80vh !important;
+margin: 10vh 10vw !important;
+background-color: transparent !important;
+}
+
+* {
+color: white !important;
+border: none !important;
+}
+
+#output-container {
+position: fixed;
+top: 5%;
+left: 50%;
+transform: translateX(-50%);
+width: 70vw;
+max-width: 1200px;
+background: linear-gradient(
+rgba(90, 6, 20, 0.5),
+rgba(30, 30, 30, 0.1)
+);
+border-radius: 20px;
+padding: 20px;
+z-index: 9998;
+box-sizing: border-box;
+backdrop-filter: blur(10px);
+pointer-events: none;
+}
+
+#output h1 {
+font-size: 20px !important;
+font-weight: normal;
+}
+
+#output p {
+font-size: 14px !important;
+}
+
+#overlay-clock {
+position: fixed;
+bottom: 15%;
+left: 2%;
+transform: translateX(-50%) rotate(270deg);
+width: 1500px;
+height: 500px;
+border: none;
+z-index: 9999;
+filter: invert(1) hue-rotate(180deg);
+transform-origin: center;
+}
