@@ -1,5 +1,9 @@
 # plash-desktop-customisations
 
+<p align="center">
+  <img src="docs/logo.svg" alt="plash-desktop-customisations logo" width="128" />
+</p>
+
 Minimal CSS and JavaScript overlays for [Plash](https://sindresorhus.com/plash), the macOS app that turns any website into your desktop wallpaper. Each style restyles one site so it sits cleanly behind your windows.
 
 ## Preview
