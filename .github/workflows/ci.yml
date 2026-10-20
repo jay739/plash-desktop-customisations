@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    name: Check styles
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Every style script parses
+        run: |
+          find . -name "*.js" -not -path "./.git/*" -print0 | while IFS= read -r -d "" f; do
+            node --check "$f" && echo "ok $f"
+          done
+      - name: README images exist
+        run: |
+          grep -oE "\]\(\./[^)]+\)" README.md | sed -E "s/^\]\(\.\/(.*)\)$/\1/; s/%20/ /g" | while read -r img; do
+            test -f "$img" && echo "ok $img" || { echo "::error::missing $img"; exit 1; }
+          done
